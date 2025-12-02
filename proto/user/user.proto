@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "github.com/akanshgupta98/BlogProject/proto/protogen/user";
+
+message UserData {
+    uint64 id = 1;
+    string username = 2;
+    string name = 3;
+    string email = 4;
+    string phone = 17;
+}
+
+message UserID {
+    uint64 id = 1;
+}
+
+service UserService {
+    rpc CreateUser(UserData) returns (UserID);
+    rpc FetchUserByID(UserID) returns (UserData);
+}

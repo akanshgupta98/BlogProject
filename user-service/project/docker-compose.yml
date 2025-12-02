@@ -1,0 +1,14 @@
+services:
+  postgres-user-service:
+    image: postgres:14.2
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DBNAME=users
+      - DB_HOST=5432
+      - DB_NAME=users
+      - DB_SSLMODE=disabled
+      - DB_IP=postgres-user-service
+
